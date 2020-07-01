@@ -1,0 +1,8 @@
+<div class="input-group mb-3" *ngFor="let item of listaTareas">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input type="checkbox" aria-label="Checkbox for following text input" [disabled]="TarDes" (click)="Inhabilitar()">
+      </div>
+    </div>
+    <input type="text" class="form-control" aria-label="Text input with checkbox" disabled value="{{item.tarea}}" disabled [ngClass]="TarDes==true ? 'marca' : ''">
+  </div>

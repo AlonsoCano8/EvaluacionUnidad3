@@ -1,0 +1,19 @@
+.nom {
+    padding: 15px;
+    margin: 15px;
+    font-weight: bold;
+  }
+.padre {
+    display: flex;
+    justify-content: center;
+  }
+  .hijo {
+    padding: 10px;
+    margin: 10px;
+  } 
+  .no{
+    color: red;
+}
+p{
+    line-height: 30% 
+  }

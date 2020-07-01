@@ -1,0 +1,31 @@
+<br>
+<div class="container">
+<form [formGroup]="tarForm1" (ngSubmit)="enviar(tarForm1.value)">
+<div class="form-row" class="padre">
+    <div class="input-group">
+        <input formControlName="tarea" type="text" class="form-control" placeholder="Descripción de la tarea" required>
+        <div class="input-group-append"> 
+            <button type="submit" [disabled]="tarForm1.invalid" class="btn btn-primary">Guardar</button>
+        </div>
+        <div class="no" *ngIf="tarForm1.get('tarea').hasError('required') && tarForm1.get('tarea').touched">¡Campo Obligatorio!</div> 
+    </div>
+  </div>
+  <br>
+  <button *ngIf="tareasAry.length>0" type="submit" class="btn btn-danger" (click)="Eliminar()">Eliminar todo</button>
+  <br>
+  <br>
+  <br>
+
+  <div *ngFor="let tareasn of tareasAry" class="container">
+    <app-listar-tareas [listaTareas]="[tareasn]"></app-listar-tareas>
+    </div>
+
+
+  </form>
+</div>
+
+<footer class="nom">
+    <p>Alonso Cano Herbert</p>
+    <p>Desarrollo de Aplicaciones Web</p>
+    <p>ITIC. Iván Eduardo García Quintero</p>
+  </footer>

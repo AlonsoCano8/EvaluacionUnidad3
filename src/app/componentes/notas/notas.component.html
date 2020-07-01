@@ -1,0 +1,42 @@
+<br>
+<div class="container">
+    <form [formGroup]="notForm1" (ngSubmit)="enviar(notForm1.value)">
+      <div class="form-row" class="padre">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Título</span>
+          </div>
+          <input formControlName="tit" type="text" class="form-control" placeholder="Título de la nota" required>
+          <div class="no" *ngIf="notForm1.get('tit').hasError('required') && notForm1.get('tit').touched">¡Campo Obligatorio!</div>
+        </div>
+      </div>  
+      <br>
+      <div class="form-row" class="padre">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Descripción</span>
+          </div>
+          <textarea formControlName="desc"class="form-control" placeholder="Agregar descripción de la nota" rows="3"></textarea>
+          <div class="no" *ngIf="notForm1.get('desc').hasError('required') && notForm1.get('desc').touched">
+            ¡Campo Obligatorio!</div>
+        </div>
+      </div>
+      <br>
+      <button [disabled]="notForm1.invalid" class="btn btn-primary" type="submit">Guardar</button>
+    </form>
+  </div>
+  <br>  
+  <div class="container" *ngIf="datos.length>0">
+  <div class="card border-primary mb-3" style="width: 18rem;" *ngFor="let item of datos">
+    <div style="color: black;" class="card-header fecha">{{fecha| date:"dd-MM-yy"}}</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title titulo">{{item.tit}}</h5>
+      <p class="card-text descripcion">{{item.desc}}</p>
+    </div>
+</div>
+</div>
+<footer class="nom">
+    <p>Alonso Leonides Cano Herbert</p>
+    <p>Desarrollo de Aplicaciones Web</p>
+    <p>ITIC. Iván Eduardo García Quintero</p>
+  </footer>
