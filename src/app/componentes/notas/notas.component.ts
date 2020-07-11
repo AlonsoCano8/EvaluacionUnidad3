@@ -24,10 +24,10 @@ export class NotasComponent implements OnInit {
     if(JSON.parse(localStorage.getItem('notas'))){
       this.cargar();
     }
+    this.fecha= new Date;
   }
 
   enviar(values){
-    this.fecha= new Date;
     this.datos.push(values);
     this.notForm1.reset();
     localStorage.setItem('notas', JSON.stringify(this.datos))

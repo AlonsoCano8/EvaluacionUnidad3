@@ -10,7 +10,7 @@ import {Notas} from '../../model/tareas'
 })
 export class TareasComponent implements OnInit {
 
-  tareasAry : Array<string>=[];
+
   isDisabled : boolean;
   arre:Array<Notas>=[];
 
@@ -40,7 +40,7 @@ export class TareasComponent implements OnInit {
   }
 
   Eliminar(){
-    this.tareasAry=[];
+    this.arre=[];
     localStorage.removeItem('arreglo');
   }
 

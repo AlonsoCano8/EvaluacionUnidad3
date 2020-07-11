@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "EvaluacionUnidad3"
+    }
+  },
+  "defaultProject": "EvaluacionUnidad3",
+  "cli": {
+    "analytics": false
+  }
 }

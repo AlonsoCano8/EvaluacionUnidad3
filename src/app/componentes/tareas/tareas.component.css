@@ -17,3 +17,7 @@
 p{
   line-height: 30% 
 }
+
+.s{
+  text-decoration: line-through;
+}
