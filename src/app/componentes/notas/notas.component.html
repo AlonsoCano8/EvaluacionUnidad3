@@ -17,6 +17,7 @@
             <span class="input-group-text">Descripción</span>
           </div>
           <textarea formControlName="desc"class="form-control" placeholder="Agregar descripción de la nota" rows="3"></textarea>
+         
           <div class="no" *ngIf="notForm1.get('desc').hasError('required') && notForm1.get('desc').touched">
             ¡Campo Obligatorio!</div>
         </div>

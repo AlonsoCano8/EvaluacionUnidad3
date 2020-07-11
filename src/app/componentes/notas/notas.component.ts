@@ -21,12 +21,24 @@ export class NotasComponent implements OnInit {
   notForm1: FormGroup
 
   ngOnInit(): void {
+    if(JSON.parse(localStorage.getItem('notas'))){
+      this.cargar();
+    }
   }
 
   enviar(values){
     this.fecha= new Date;
     this.datos.push(values);
     this.notForm1.reset();
-    console.log(this.datos);
+    localStorage.setItem('notas', JSON.stringify(this.datos))
+  }
+
+  borrar(){
+    this.datos=[];
+    localStorage.removeItem('notas');
+  }
+
+  cargar(){
+    this.datos=JSON.parse(localStorage.getItem('notas'));
   }
 }
